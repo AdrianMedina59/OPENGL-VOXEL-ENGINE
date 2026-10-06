@@ -63,14 +63,14 @@ public:
         modelMatrix = matrix;
     }
 
-    bool isActive()
+    bool isActive() const
     {
-
+        return active;
     }
 
-    void setActive(bool active)
+    void setActive(bool isActive)
     {
-
+        active = isActive;
     }
     
     glm::vec2 GetAtlasUV(int face) const {
@@ -114,7 +114,7 @@ public:
         }
     }
 private:
-    bool active;
+    bool active = true;
 
    
 };

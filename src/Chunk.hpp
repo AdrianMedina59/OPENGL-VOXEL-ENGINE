@@ -39,8 +39,8 @@ private:
 
 	bool dirty;
 	std::vector<float> vertexData; // Combined vertex data: position, normal, texcoord
-	int vertexCount;               // Total number of vertices after building the mesh
-	unsigned int VAO, VBO;
+	int vertexCount = 0;           // Total number of vertices after building the mesh
+	unsigned int VAO = 0, VBO = 0;
 
 	void AppendFaceVertices(int x, int y, int z, int face, glm::ivec2 atlasCoord);
 

@@ -1,6 +1,7 @@
-﻿#include "Chunk.hpp"
+#include "Chunk.hpp"
 
 #include<noise/noise.h>
+#include <algorithm>
 #include <random>
 #include "World.hpp"
 using namespace noise;
@@ -182,7 +183,7 @@ void Chunk::BuildMesh()
             }
         }
     }
-	vertexCount = vertexData.size() / 9; //8 floats per vertex: pos(3) + norm(3) + uv(2)
+	vertexCount = static_cast<int>(vertexData.size() / 9); // 9 floats per vertex: pos(3) + norm(3) + uv(2) + ao(1)
 }
 
 void Chunk::UploadMeshToGPU()

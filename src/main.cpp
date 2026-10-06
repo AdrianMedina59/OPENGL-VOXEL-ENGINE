@@ -1,7 +1,8 @@
-﻿#define GLFW_INCLUDE_NONE
+#define GLFW_INCLUDE_NONE
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include <ctime>
 #include <iostream>
 #include <vector>
 
@@ -17,9 +18,9 @@
 #include "input.hpp"
 #include "World.hpp"
 
-#include "imgui/imgui.h"
-#include "imgui/imgui_impl_glfw.h"
-#include "imgui/imgui_impl_opengl3.h"
+#include "imgui.h"
+#include "imgui_impl_glfw.h"
+#include "imgui_impl_opengl3.h"
 
 
 #include "stb_image.h"
@@ -85,7 +86,7 @@ int main() {
 
     glm::vec3 lightPos(0.0f, 2.0f, 2.0f);
 
-    glm::vec3 lightColor;
+    glm::vec3 lightColor(1.0f);
   
  
 

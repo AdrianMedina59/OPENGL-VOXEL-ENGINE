@@ -1,5 +1,7 @@
 #include "World.hpp"
 
+#include <cmath>
+
 constexpr int CHUNK_DIM = 16;
 
 World::World(int seed) : seed(seed)
@@ -56,8 +58,8 @@ void World::Render(Shader& shader, const glm::vec3& cameraPos) {
 
 bool World::IsBlockSolidAtWorld(int x, int y, int z)
 {
-	int chunkX = floor(x / 16.0f);
-	int chunkZ = floor(z / 16.0f);
+	int chunkX = static_cast<int>(std::floor(x / 16.0f));
+	int chunkZ = static_cast<int>(std::floor(z / 16.0f));
 	glm::ivec2 chunkCoord(chunkX, chunkZ);
 
 	auto it = chunks.find(chunkCoord);
@@ -75,8 +77,8 @@ bool World::IsBlockSolidAtWorld(int x, int y, int z)
 glm::ivec2 World::getPlayerChunkCoord(const glm::vec3& pos)
 {
 	 return glm::ivec2(
-        floor(pos.x / CHUNK_DIM),
-        floor(pos.z / CHUNK_DIM)
+        static_cast<int>(std::floor(pos.x / CHUNK_DIM)),
+        static_cast<int>(std::floor(pos.z / CHUNK_DIM))
     );
 }
 
