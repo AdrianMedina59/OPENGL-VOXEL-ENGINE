@@ -3,6 +3,8 @@
 A voxel terrain engine using OpenGL 3.3, GLFW, GLM, Dear ImGui and libnoise.
 
 ## Layout
+<img width="789" height="593" alt="image" src="https://github.com/user-attachments/assets/299986fd-cf26-4f94-b8e1-058356903563" />
+
 
 ```
 src/            engine source code
